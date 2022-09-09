@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="imagens/Logo.png" alt="Logo da Alura - A">
+    </header>
+    
+    <main>
+
+        <section id="botoes">
+            <button class="comecar" onclick="iniciaJogo()">Começar Jogo</button>
+            <button>Adicionar nova palavra</button> 
+        </section>  
+
+        <section id="aparece-forca">
+            <canvas height="860px" width="1200px" id="forca" ></canvas>
+        </section>
+
+    </main>
+
+    <footer>
+        Desenvolvido por: <a href="https://marla-ingridh.github.io/codificador-decodificador/" target="_blank"> Marla Ingridh</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

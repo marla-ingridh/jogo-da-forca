@@ -37,15 +37,14 @@ function desenhaLinhas(){
 
 }
 
-function escreveLetraCorreta(){
+function escreveLetraCorreta(letra){
     tabuleiro.font = '70px arial';
     tabuleiro.lineWidth = 2;
-
     
     let largura = 600/palavraSecreta.length;
 
     for(let i = 0; i < palavraSecreta.length; i++){
-        tabuleiro.strokeText(palavraSecreta[i],300+(largura*i),620);
+        tabuleiro.strokeText(letra,300+(largura*i),620);
     }
 
      

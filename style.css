@@ -16,6 +16,9 @@ main{
     justify-content: center;
     align-items: center;
 }
+#botoes{
+    position: absolute;
+}
 
 section{
 
@@ -40,9 +43,7 @@ button:hover{
     color: #fff;
 }
 
-#forca{
-    background-color: #0A3871;
-}
+
 footer{
     text-align: center;
     font-size: 12px;

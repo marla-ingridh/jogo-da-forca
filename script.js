@@ -31,17 +31,15 @@ function validaValorDigitado(){
 function  comparaLetras(letra){
     
     let letraDigitada =  letra.toUpperCase();
-    let palavraSecretaArray = palavraSecreta.toUpperCase().split('');   
-    
+    let palavraSecretaArray = palavraSecreta.toUpperCase().split('');       
 
     if(palavraSecretaArray.indexOf(letraDigitada) > -1){
-        escreveLetraCorreta(letraDigitada);
         letrasCorretas.push(letraDigitada);
+        escreveLetraCorreta(letraDigitada);        
     }else{
-        alert('Letra Incorreta, tente novamente');
-        letrasErradas.push(letraDigitada);
-    };
-    
+        letrasErradas.push(letraDigitada); 
+        escreveLetraErrada(letraDigitada);        
+    }   
 
 }
 

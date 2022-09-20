@@ -9,11 +9,35 @@ function desenhaCanvas(){
     
     //manipulação 
     tabuleiro.fillRect(0,0,1200,800);
+
     tabuleiro.beginPath();
     tabuleiro.moveTo(700,500);
     tabuleiro.lineTo(450,500);
     tabuleiro.stroke(); 
     tabuleiro.closePath();
+
+
+    tabuleiro.beginPath();
+    tabuleiro.moveTo(480,150);
+    tabuleiro.lineTo(480,500);
+    tabuleiro.stroke(); 
+    tabuleiro.closePath();
+
+
+    tabuleiro.beginPath();
+    tabuleiro.moveTo(480,150);
+    tabuleiro.lineTo(650,150);
+    tabuleiro.stroke(); 
+    tabuleiro.closePath();
+
+
+    tabuleiro.beginPath();
+    tabuleiro.moveTo(650,150);
+    tabuleiro.lineTo(650,220);
+    tabuleiro.stroke(); 
+    tabuleiro.closePath();
+
+
 }
 
 
@@ -48,7 +72,21 @@ function escreveLetraCorreta(letra){
         if(palavraSecreta[i] == letra){        
             tabuleiro.strokeText(letra,300+(largura*i),620);
         }
-    }   
+    }  
 
 }
+
+
+function escreveLetraErrada(letra){
+
+    tabuleiro.font = '30px arial';
+    tabuleiro.lineWidth = 2;
+
+    let espacamento = (letrasErradas.length * 30);
+    
+    tabuleiro.strokeText(letra,300+espacamento,720);   
+    
+}
+
+
 

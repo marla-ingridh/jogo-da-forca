@@ -68,12 +68,13 @@ function escreveLetraCorreta(letra){
     let largura = 600/palavraSecreta.length;
 
     for(let i = 0; i < palavraSecreta.length; i++){
-
         if(palavraSecreta[i] == letra){        
             tabuleiro.strokeText(letra,300+(largura*i),620);
         }
     }  
 
+    
+    
 }
 
 
@@ -85,8 +86,94 @@ function escreveLetraErrada(letra){
     let espacamento = (letrasErradas.length * 30);
     
     tabuleiro.strokeText(letra,300+espacamento,720);   
+    desenhaForca();   
     
 }
 
+function desenhaForca(){
+
+    for(let i = 0; i < quantidadeErros ;i++){
+
+        if(quantidadeErros == 1) {
+
+            //cabeça
+            tabuleiro.beginPath();
+            tabuleiro.arc(650, 265, 40, 0, Math.PI * 2, true); // Círculo exterior
+            tabuleiro.stroke();
+
+        }else if(quantidadeErros == 2){
+
+            //desenha tronco
+            tabuleiro.beginPath();
+            tabuleiro.moveTo(650,310);
+            tabuleiro.lineTo(650,400);
+            tabuleiro.stroke(); 
+            tabuleiro.closePath();
+
+        }else if(quantidadeErros == 3){
+
+            //desenha Braço Esquerda
+            tabuleiro.beginPath();
+            tabuleiro.moveTo(650,310);
+            tabuleiro.lineTo(700,330);
+            tabuleiro.stroke(); 
+
+            tabuleiro.closePath();
+        }else if(quantidadeErros == 4){
+
+            //desenha Braço Direita
+            tabuleiro.beginPath();
+            tabuleiro.moveTo(650,310);
+            tabuleiro.lineTo(600,330);
+            tabuleiro.stroke(); 
+            tabuleiro.closePath();
+
+        }else if(quantidadeErros == 5){
+
+            //desenha Perna Esquerda
+            tabuleiro.beginPath();
+            tabuleiro.moveTo(650,400);
+            tabuleiro.lineTo(700,430);
+            tabuleiro.stroke(); 
+            tabuleiro.closePath();
+
+        }else if(quantidadeErros == 6){
+
+            //desenha Perna Direita
+            tabuleiro.beginPath();
+            tabuleiro.moveTo(650,400);
+            tabuleiro.lineTo(600,430);
+            tabuleiro.stroke(); 
+            tabuleiro.closePath();
+
+        }
+
+    }
+
+}
 
 
+function perdeu(){
+    tabuleiro.font = '30px arial';
+    tabuleiro.lineWidth = 2;    
+    tabuleiro.fillStyle = "#FF0000";  
+    tabuleiro.fillText('Você Perdeu !',800,320);  
+
+
+    tabuleiro.font = '30px arial';
+    tabuleiro.lineWidth = 2;    
+    tabuleiro.fillStyle = "#FF0000";  
+    tabuleiro.fillText('x',630,260); 
+    tabuleiro.fillText('x',660,260);   
+}
+
+
+function acertouTudo(){
+
+    tabuleiro.font = '30px arial';
+    tabuleiro.lineWidth = 2;    
+    tabuleiro.fillStyle = "#77DD77";  
+    tabuleiro.fillText('Você Venceu! Parabéns !!',800,320);  
+
+
+}

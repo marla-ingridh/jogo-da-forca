@@ -6,6 +6,10 @@ let palavraSecreta = "";
 let letrasCorretas = [];
 let letrasErradas = []; 
 
+let quantidadeErros = 0;
+
+
+
 function escolherPalavrasSecreta(){
     let palavra = palavras[Math.floor(Math.random() * palavras.length)]; 
     palavraSecreta = palavra;
@@ -34,11 +38,24 @@ function  comparaLetras(letra){
     let palavraSecretaArray = palavraSecreta.toUpperCase().split('');       
 
     if(palavraSecretaArray.indexOf(letraDigitada) > -1){
+        
         letrasCorretas.push(letraDigitada);
-        escreveLetraCorreta(letraDigitada);        
+        escreveLetraCorreta(letraDigitada);     
+
+        // comparando  arrays usando stringify
+            if(JSON.stringify(palavraSecretaArray)==JSON.stringify(letrasCorretas))
+            acertouTudo();
+
     }else{
-        letrasErradas.push(letraDigitada); 
-        escreveLetraErrada(letraDigitada);        
+        if(quantidadeErros < 6 ){
+            letrasErradas.push(letraDigitada); 
+            quantidadeErros += 1; 
+            escreveLetraErrada(letraDigitada);  
+        }else{
+            perdeu();
+            //document.location.reload(true);
+        }
+              
     }   
 
 }
@@ -50,6 +67,8 @@ function iniciaJogo(){
     desenhaCanvas();
     desenhaLinhas();
     validaValorDigitado();
+    
+    
     
 }
 

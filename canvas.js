@@ -177,3 +177,12 @@ function acertouTudo(){
 
 
 }
+
+
+const utlParams = new URLSearchParams(window.location.search);
+const nomeParam = utlParams.get("recomecar");
+//console.log(nomeParam);
+
+if(nomeParam==1){
+    iniciaJogo();
+}

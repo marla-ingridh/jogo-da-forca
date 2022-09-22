@@ -1,5 +1,5 @@
 
-let palavras = ['ALURA','JAVASCRIPT','LOGICA','HTML','ORACLE','FORCA'];
+let palavras  = ['ALURA','JAVASCRIPT','LOGICA','HTML','ORACLE','FORCA'];
 let tabuleiro = document.getElementById('forca').getContext('2d');
 let palavraSecreta = "";
 
@@ -7,7 +7,6 @@ let letrasCorretas = [];
 let letrasErradas = []; 
 
 let quantidadeErros = 0;
-
 
 
 function escolherPalavrasSecreta(){
@@ -53,22 +52,51 @@ function  comparaLetras(letra){
             escreveLetraErrada(letraDigitada);  
         }else{
             perdeu();
-            //document.location.reload(true);
+            
         }
               
     }   
 
 }
 
+function desistir(){
+
+    document.location= "./index.html?recomecar=" +0;   
+}
+
+function novoJogo(){
+    document.location= "./index.html?recomecar=" +1;    
+}
+
+function cadastrarPalavra(){
+    document.getElementById('botoes').style.display = 'none';
+    document.getElementById('aparece-forca').style.display = 'none';    
+    document.querySelector('#palavraNova').style.display = 'block';
+}
+
+function salvaPalavra(){
+    let novaPalavra =   document.querySelector("#palavra").value;
+       
+    palavras.push(novaPalavra);    
+    alert('Palavra Adicionada com sucesso');
+    console.log(palavras);
+
+    document.querySelector('#palavraNova').style.display = 'none';
+    document.getElementById('aparece-forca').style.display = 'block';
+    iniciaJogo()
+}
+
 
 function iniciaJogo(){
     document.getElementById('botoes').style.display = 'none';
+    document.querySelector('.botoes').style.display = 'block';
     escolherPalavrasSecreta();
     desenhaCanvas();
     desenhaLinhas();
-    validaValorDigitado();
-    
-    
+    validaValorDigitado();      
     
 }
+
+
+
 

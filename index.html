@@ -10,19 +10,30 @@
 <body>
 
     <header>
-        <img src="imagens/Logo.png" alt="Logo da Alura - A">
+        <a href="./index.html">  <img src="imagens/Logo.png" alt="Logo da Alura - A"> </a>
     </header>
     
     <main>
 
         <section id="botoes">
             <button class="comecar" onclick="iniciaJogo()">Começar Jogo</button>
-            <button>Adicionar nova palavra</button> 
+            <button onclick="cadastrarPalavra()" > Adicionar nova palavra</button> 
         </section>  
 
         <section id="aparece-forca">
-            <canvas height="860px" width="1200px" id="forca" ></canvas>
+            <canvas height="760px" width="1200px" id="forca" ></canvas>
+            
+            <div class="botoes">
+                <input type="submit" value="Novo Jogo" onclick="novoJogo()" class="comecar">
+                <input type="submit" value="Desistir" onclick="desistir()">
+            </div>
         </section>
+
+        <section id="palavraNova">
+            <label for="palavra"> <h4> Digite a palavra a ser cadastrada. </h4></label>
+            <input type="text" name="" id="palavra" >
+            <input type="submit" name="" id="" value="Salvar" class="comecar" onclick="salvaPalavra()">
+        </section>       
 
     </main>
 

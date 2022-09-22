@@ -16,12 +16,19 @@ main{
     justify-content: center;
     align-items: center;
 }
+canvas{
+    margin: 0;
+}
 #botoes{
     position: absolute;
 }
 
-section{
-
+.botoes{
+    display: none;
+    background-color: #F3F5FC;
+    text-align: center;
+    padding: 20px;
+    margin-top: -5px;
 }
 button{
     display: block;
@@ -44,8 +51,30 @@ button:hover{
 }
 
 
+input{   
+
+    padding: 10px 80px ;
+    border-radius: 15px;
+    color: #0A3871;
+    border: 1px #0A3871 solid;
+    margin: 10px auto 10px auto;
+    cursor: pointer;
+    font-size: 15px;   
+}
+input:hover{
+    box-shadow: 0 0 1em #000 ;
+}
+
+#palavra{
+    padding: 10px ;
+}
+#palavraNova{
+    display: none;
+}
+
 footer{
     text-align: center;
     font-size: 12px;
     color: #ccc;
+    margin-top: 60px;
 }

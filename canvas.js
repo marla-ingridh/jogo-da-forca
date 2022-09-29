@@ -70,6 +70,8 @@ function escreveLetraCorreta(letra){
     for(let i = 0; i < palavraSecreta.length; i++){
         if(palavraSecreta[i] == letra){        
             tabuleiro.strokeText(letra,300+(largura*i),620);
+            letrasCorretas.push(letra);
+            console.log(letrasCorretas);
         }
     }  
 
@@ -165,6 +167,8 @@ function perdeu(){
     tabuleiro.fillStyle = "#FF0000";  
     tabuleiro.fillText('x',630,260); 
     tabuleiro.fillText('x',660,260);   
+
+    setTimeout("document.location= './index.html'",3000);
 }
 
 
@@ -174,14 +178,13 @@ function acertouTudo(){
     tabuleiro.lineWidth = 2;    
     tabuleiro.fillStyle = "#77DD77";  
     tabuleiro.fillText('Você Venceu! Parabéns !!',800,320);  
-
+    setTimeout("document.location= './index.html'",3000);
 
 }
 
 
 const utlParams = new URLSearchParams(window.location.search);
 const nomeParam = utlParams.get("recomecar");
-//console.log(nomeParam);
 
 if(nomeParam==1){
     iniciaJogo();
